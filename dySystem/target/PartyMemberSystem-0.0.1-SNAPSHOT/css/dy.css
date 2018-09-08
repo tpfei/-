@@ -1,0 +1,37 @@
+.ha{
+	background-color: #F8F8FF;
+}
+.i1{
+	border-radius:25px;
+	background: url(paper.gif);
+}
+font{
+	color: red;
+}
+.p3,.p5,.p6{
+	background-color: #F8F8FF;
+}
+.i2,.i3,.i4,.i5{
+	width: 150px;
+}
+.i6{
+	width:auto ;
+	height: auto;
+}
+.s1{
+	
+	width: 200px;
+}
+div{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+p{
+	margin: 3 auto;
+}
+span{
+	color: red;
+}
+.hd{
+	background-color:#F8F8FF ;
+}

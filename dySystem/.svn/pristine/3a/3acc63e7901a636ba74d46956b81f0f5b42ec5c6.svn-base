@@ -1,0 +1,84 @@
+<html>
+<style>
+div {
+	position: relative;
+}
+
+table {
+	border-collapse: collapse;
+	border-color: #4e4e4e;
+}
+
+tr {
+	height: 30px;
+}
+
+#left {
+	width: 80px;
+	text-align: right;
+}
+
+#right {
+	width: 600px;
+}
+
+input {
+	margin: 0px, 0px;
+	padding: 0px, 0px;
+}
+
+#last {
+	text-align: center;
+}
+
+#last input {
+	background-color: blue;
+	margin-left: 20px;
+	color: white;
+}
+
+#h1 {
+	height: 20px;
+	width: 689;
+	background-color: #dddcde;
+	text-align: center;
+}
+
+#s3 {
+	color: black;
+	float: center;
+}
+</style>
+<body>
+	<div id="h1">
+		<tr>
+			<span id="s3">
+				<td><font size="4"><b>添加用户表</b></font></td>
+			</span>
+		</tr>
+	</div>
+	<form action="saveUser.do" method="post">
+		<div>
+
+			<table border="1">
+				<tr>
+					<td id='left'>用户名:</td>
+					<td id='right'><input type="text" name="username" /></td>
+				</tr>
+				<tr>
+					<td id='left'>角色:</td>
+					<td id='right'><SELECT NAME="Cats" SIZE="1">
+							<OPTION VALUE="R10001">党委管理员
+							<OPTION VALUE="R10002">党支部管理员
+							<OPTION VALUE="R10004" SELECTED>普通党员
+					</SELECT></td>
+				</tr>
+				<tr>
+					<td id='last' colspan="2"><input type="submit" value="保存" />
+						<input type="button" value="返回" /></td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</body>
+</html>

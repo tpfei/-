@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	
+	<title>缴纳党费</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/demo.css">
+	<script type="text/javascript" src="../easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+	
+	<script type="text/javascript" src="../js/showPay.js"></script>
+</head>
+<body>
+	<table id="dg" title="党费缴纳信息" class="easyui-datagrid"  style="width:auto;  height: 250px; padding: 5px" >
+		<thead>
+ 			<tr>
+				<th field="DY_ID" width="50">党员ID</th>
+				<th field="DY_NAME" width="50">姓名</th>
+				<th field="COSTSTATE" width="50">缴费状态</th>
+			</tr>
+		</thead>
+	</table>
+	<div id="toolbar">
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="false" onclick="editUser()">缴费</a></div>	
+	<div id="dlg" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
+			closed="true" buttons="#dlg-buttons">
+		<form id="fm" method="post" novalidate>
+			<div class="fitem">
+				<label>确认缴费？</label>
+			</div>
+		</form>
+	</div>
+	<div id="dlg-buttons">
+		<a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="updateUser()" style="width:90px">确认</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">取消</a>
+	</div>
+	<script type="text/javascript">
+		var url;
+		function editUser(){
+			$('#dlg').dialog('open').dialog('setTitle','编辑缴费信息')
+			$('#fm').form('clear');
+			url = '../updatePay.do';
+		}
+		function updateUser(){
+			var row = $('#dg').datagrid('getSelected');
+			if(row) {
+				var dy_id = row.dy_id;
+				$('#fm').form('submit',{
+					url: url,
+					dataType:"text",
+					onSubmit: function(param){
+						param.dy_id = dy_id;
+						return $(this).form('validate');
+					},
+					success: function(result){
+						var result = JSON.parse(result);
+						if (result.errorMsg){
+							$.messager.show({
+								title: 'Error',
+								msg: result.errorMsg
+							});
+						} else {
+							$('#dlg').dialog('close');	
+							$('#dg').datagrid('reload');	
+						}
+					}
+				});
+			}
+			else {
+				alert("未选择数据");
+				$('#dlg').dialog('close');
+			}
+		}
+		
+	</script>
+	<style type="text/css">
+		#fm{
+			margin:0;
+			padding:10px 30px;
+		}
+		.ftitle{
+			font-size:14px;
+			font-weight:bold;
+			padding:5px 0;
+			margin-bottom:10px;
+			border-bottom:1px solid #ccc;
+		}
+		.fitem{
+			margin-bottom:5px;
+		}
+		.fitem label{
+			display:inline-block;
+			width:80px;
+		}
+		.fitem input{
+			width:160px;
+		}
+	</style>
+</body>
+</html>

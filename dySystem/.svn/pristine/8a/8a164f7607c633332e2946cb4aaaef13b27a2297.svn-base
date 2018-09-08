@@ -1,0 +1,26 @@
+table {
+			border-collapse: collapse;
+			text-align: center;
+			margin-top: 5px;
+		}
+		th
+		{
+			width:100px;
+		}
+		tr
+		{
+			height: 40px;
+		}
+		#menu
+		{
+			position:relative;
+			margin-left:20px;
+			margin-right:20px;
+			color: blue;
+			width:80px;
+			margin-top: 5px;
+		}
+		select
+		{
+			width: 150px;
+		}

@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jQuery/jquery-3.3.1.js"></script>
+<title>基本信息</title>
+<link rel="stylesheet" type="text/css" href="../css/selfMessage.css">
+<script type="text/javascript" src="../js/selfMessage.js"> </script>
+</head>
+<body>
+  <div>
+	<table border="2">
+		<tr>
+			<th >党员ID</th>
+			<th id="td0"></th>
+			<th >支部ID</th>
+			<th id="td1"></th>
+		</tr>
+		<tr>
+			<td >姓名</td>
+			<td  id="td2"></td>
+			<td >性别</td>
+			<td  id="td3"></td>
+		</tr>
+		<tr>
+			<td >籍贯</td>
+			<td  id="td4"></td>
+			<td >名族</td>
+			<td  id="td5"></td>
+		</tr>
+		<tr>
+			<td >身份证号</td>
+			<td  id="td6"></td>
+			<td >人员类别</td>
+			<td  id="td7"></td>
+		</tr>
+		<tr>
+			<td >申请入党时间</td>
+			<td  id="td8"></td>
+			<td >列为积极分子时间</td>
+			<td  id="td9"></td>
+		</tr>
+		<tr>
+			<td> 培养联系人</td>
+			<td  id="td10"></td>
+			<td >何时为发展对象</td>
+			<td  id="td11"></td>
+		</tr>
+		<tr>
+			<td >入党介绍人</td>
+			<td  id="td12"></td>
+			<td >入党时间</td>
+			<td  id="td13"></td>
+		</tr>
+		<tr>
+			<td >党委审批时间</td>
+			<td  id="td14"></td>
+			<td >转正时间</td>
+			<td  id="td15"></td>
+		</tr>
+		<tr>
+			<td >党委审批时间</td>
+			<td  id="td16"></td>
+			<td >联系方式</td>
+			<td  id="td17"></td>
+		</tr>
+		<tr>
+			<td colspan="2">家庭住址:</td>
+			<td colspan="2" id="td18"></td>
+		</tr>
+	</table>
+  </div>
+ 
+</body>
+</html>
