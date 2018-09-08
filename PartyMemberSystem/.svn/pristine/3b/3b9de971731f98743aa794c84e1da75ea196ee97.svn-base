@@ -1,0 +1,16 @@
+div
+{
+	width: 410px;
+	height: 810px;
+}
+table
+{
+	width:480px;
+	height: 450px; 
+	text-align: left;
+	border-collapse: collapse;
+}
+th
+{
+	width: 120px;
+}

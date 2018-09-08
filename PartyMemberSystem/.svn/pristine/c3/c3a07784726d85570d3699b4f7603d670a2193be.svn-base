@@ -1,0 +1,6 @@
+#h1 {
+	height: 30px;
+	width: 80;
+	background-color: #ff80ff;
+	text-align: center;
+}

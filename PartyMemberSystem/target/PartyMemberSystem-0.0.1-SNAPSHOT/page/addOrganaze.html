@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>党组织单位信息维护</title>
+<link rel="stylesheet" type="text/css" href="css/dy.css">
+<script src="jQuery/jquery-3.3.1.js"></script>
+</head>
+<body id="main">
+	<form action="saveBranch.do" method="post">
+		<div class="ha">
+			<p class="p1">组织基本信息</p>
+		</div>
+		<div class="hb">
+			<font>党组织信息</font> <input type="submit" value="保存" class="i1">
+			<input type="button" value="退出" class="b2">
+			<script type="text/javascript">
+				$(function() {
+					$(".b2").click(function() {
+						var url = "addBranch.do";
+						$("#main").load(url);
+					})
+				})
+			</script>
+		</div>
+		<div class="hd">
+			上级党组织： <select name="upOrg">
+				<option value="DW10001">电子工程学院党委</option>
+				<option value="DW10002">数学与计算科学学院党委</option>
+			</select> 
+
+		</div>
+		<div class="hc">
+			<p class="p2">
+				<span>*</span>党组织名称（填写全称）：<input type="text" name="dept_name" class="i2">
+			</p>
+			<p class="p3">
+				<span>*</span>党组织书记：<input type="text" name="dept_sj" class="i3">
+			</p>
+			<p class="p4">
+				<span>*</span>党组织联系人：<input type="text" name="dept_lxr" class="i4"> <span>*</span>联系电话：<input
+					type="text" name="dept_tel" class="i5">
+			</p>
+			<p class="p5">
+				<span>*</span>组织类别： <select name="dept_sort" class="s1">
+					<script type="text/javascript">
+						$(function() {
+							$.ajax({
+								url : "json/selectOrganzation.json",
+								dataType : "json",
+								success : choice
+							});
+						});
+
+						function choice(data) {
+							$.each(data, function(i, item) {
+								$(".s1").append(
+										'<option value="' + item.Id + '">'
+												+ item.Name + ' </option>')
+							});
+						}
+					</script>
+				</select>
+			</p>
+			<p class="p6">
+				<span>*</span>党组织所在单位情况：<input type="text" class="i6">
+			</p>
+		</div>
+		<div class="hd"></div>
+	</form>
+</body>
+</html>

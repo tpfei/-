@@ -1,0 +1,19 @@
+div
+{
+	width: 100%;
+}
+table
+{
+	width:100%; 
+	text-align: left;
+	border-collapse: collapse;
+}
+th
+{
+	width: 25%;
+}
+tr
+{
+	width:100%; 
+	height:50px;
+}
